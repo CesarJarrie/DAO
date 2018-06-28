@@ -115,6 +115,14 @@ class Usuario
         ));
     }
 
+    public function delete($id)
+    {
+        $sql = new Sql;
+        $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+            ":ID" => $this->setIdusuario()
+        ));
+    }
+
     public function __toString()
     {
         return json_encode(array(
